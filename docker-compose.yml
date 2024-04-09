@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   db:
@@ -45,6 +45,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - ./bin/coly.work_bundle.crt:/etc/nginx/coly.work_bundle.crt
+      - ./bin/coly.work.key:/etc/nginx/coly.work.key
       - ./bin/nginx.conf:/etc/nginx/nginx.conf
       - ./collectedstatic:/code/djangoblog/collectedstatic
     links:
